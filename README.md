@@ -1,3 +1,2 @@
-# TaskTrack-CS3354
-Student Assignment Management System 
+# TaskTrack(Student Assignment Management System)-CS3354
 Ahmed Neematallah, Ittehadul Karim, Taha Khwaja, Matthew Oksanen, Jacqueline Rodriguez
