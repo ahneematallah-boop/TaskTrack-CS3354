@@ -1,0 +1,11 @@
+{
+  // Style rules that block on structure, not on prose formatting.
+  "config": {
+    "default": true,
+    "MD013": false,  // line length: prose paragraphs wrap freely
+    "MD033": false,  // inline HTML allowed
+    "MD036": false,  // bold-as-heading allowed in use case templates
+    "MD060": false   // table column alignment style
+  },
+  "ignores": [".github/pull_request_template.md"]
+}
