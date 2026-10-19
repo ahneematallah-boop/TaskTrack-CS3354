@@ -1,9 +1,8 @@
-# TaskTrack - Team Plan and Working Agreement 
+# TaskTrack - Team Plan and Working Agreement
 
-## 1. Team Roles and Responsibilities 
+## 1. Team Roles and Responsibilities
 
 Our team consists of five members working together on TaskTrack, a web application that helps college students manage exams, deadlines, and assignments.
-
 
 | Team Member | Responsibility |
 |---|---|
@@ -13,10 +12,9 @@ Our team consists of five members working together on TaskTrack, a web applicati
 | Jackie | Team plan, milestones, and risks |
 | Karim | Repository organization and final review |
   
-
 ## 2. Team Working Agreement
 
-Our team will communicate through group messages and online meetings when needed. Each member is responsible completing their assigned work, sharing updates, and informing the team of any issues. 
+Our team will communicate through group messages and online meetings when needed. Each member is responsible completing their assigned work, sharing updates, and informing the team of any issues.
 We will use the shared repository to organize documents and track contributions. Team members should review their work before submitting changes.
 
 ## 3. Project Milestones
@@ -40,6 +38,6 @@ We will use the shared repository to organize documents and track contributions.
 | Conflicting information | Compare sections and correct inconsistencies |
 | Repository access problems | Confirm that members have access and can contribute |
 
-## 5. Individual Contribution Evidence 
+## 5. Individual Contribution Evidence
 
 Each member will document their work through repository commits, reviews, or issues and provide a brief statement describing their contribution.

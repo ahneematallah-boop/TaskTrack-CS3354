@@ -24,11 +24,13 @@ The **student** is the main user of TaskTrack. Students add their own courses an
 ## Detailed Use Cases
 
 ### UC-01: Add a Course
+
 **Actor:** Student  
 **Goal:** Add a new class to organize related academic tasks.  
 **Preconditions:** TaskTrack is open.  
 **Trigger:** Student selects **Add Course**.  
 **Main success scenario:**
+
 1. Student opens the Add Course form.
 2. TaskTrack asks for a course name and optional course code.
 3. Student enters a name such as `Software Engineering` and selects Save.
@@ -39,11 +41,13 @@ The **student** is the main user of TaskTrack. Students add their own courses an
 **Trace:** FR-01, FR-09; tests TC-01, TC-09.
 
 ### UC-02: Edit or Delete a Course
+
 **Actor:** Student  
 **Goal:** Correct a course name or remove an unused course.  
 **Preconditions:** At least one course exists.  
 **Trigger:** Student chooses Edit or Delete on a course.  
 **Main success scenario (edit):**
+
 1. Student selects the course and chooses Edit.
 2. TaskTrack fills the form with current course information.
 3. Student changes the name and saves.
@@ -54,11 +58,13 @@ The **student** is the main user of TaskTrack. Students add their own courses an
 **Trace:** FR-02, FR-13, FR-09; TC-02, TC-13.
 
 ### UC-03: Add an Assignment or Exam
+
 **Actor:** Student  
 **Goal:** Record a deadline for an assignment, quiz, or exam.  
 **Preconditions:** At least one course exists.  
 **Trigger:** Student selects **Add Task**.  
 **Main success scenario:**
+
 1. TaskTrack presents fields for title, course, due date, optional due time, description, and optional type.
 2. Student enters `Requirements worksheet`, selects `CS 3354`, and sets a due date.
 3. Student selects Save.
@@ -69,11 +75,13 @@ The **student** is the main user of TaskTrack. Students add their own courses an
 **Trace:** FR-03, FR-09, FR-10, FR-12; TC-03, TC-10, TC-12.
 
 ### UC-04: Edit an Assignment or Exam
+
 **Actor:** Student  
 **Goal:** Correct a recorded deadline or task detail.  
 **Preconditions:** Task already exists.  
 **Trigger:** Student selects Edit on a task.  
 **Main success scenario:**
+
 1. TaskTrack displays the task's existing values.
 2. Student changes title, course, deadline, description, or type.
 3. Student selects Save.
@@ -83,11 +91,13 @@ The **student** is the main user of TaskTrack. Students add their own courses an
 **Trace:** FR-04, FR-09, FR-10, FR-12; TC-04.
 
 ### UC-05: Delete an Assignment or Exam
+
 **Actor:** Student  
 **Goal:** Remove a task entered accidentally or no longer relevant.  
 **Preconditions:** Task exists.  
 **Trigger:** Student selects Delete.  
 **Main success scenario:**
+
 1. TaskTrack displays a confirmation with the selected task title.
 2. Student confirms deletion.
 3. TaskTrack deletes only that task.
@@ -97,11 +107,13 @@ The **student** is the main user of TaskTrack. Students add their own courses an
 **Trace:** FR-05, FR-08, FR-09; TC-05.
 
 ### UC-06: View Upcoming Assignments
+
 **Actor:** Student  
 **Goal:** Determine what to work on next.  
 **Preconditions:** App is open; task list may be empty.  
 **Trigger:** Student selects Upcoming or opens the task list.  
 **Main success scenario:**
+
 1. TaskTrack loads Pending tasks.
 2. TaskTrack evaluates each due timestamp against the current time.
 3. TaskTrack sorts Pending tasks from earliest deadline to latest; ties use title.
@@ -111,11 +123,13 @@ The **student** is the main user of TaskTrack. Students add their own courses an
 **Trace:** FR-06, FR-10; TC-06, TC-10.
 
 ### UC-07: Mark an Assignment Complete or Incomplete
+
 **Actor:** Student  
 **Goal:** Track finished work and correct completion mistakes.  
 **Preconditions:** Task exists.  
 **Trigger:** Student selects its status control.  
 **Main success scenario:**
+
 1. Student marks a Pending task Completed.
 2. TaskTrack saves Completed status.
 3. TaskTrack removes the task from the Pending/Overdue totals and adds it to Completed total.
@@ -126,11 +140,13 @@ The **student** is the main user of TaskTrack. Students add their own courses an
 **Trace:** FR-07, FR-08, FR-09, FR-10; TC-07, TC-08.
 
 ### UC-08: View the Dashboard
+
 **Actor:** Student  
 **Goal:** Check overall workload at a glance.  
 **Preconditions:** App is open.  
 **Trigger:** Student visits Dashboard.  
 **Main success scenario:**
+
 1. TaskTrack loads tasks from storage.
 2. TaskTrack computes Pending, Completed, and Overdue counts using defined status rules.
 3. TaskTrack shows a short list of next-due Pending tasks.
@@ -140,11 +156,13 @@ The **student** is the main user of TaskTrack. Students add their own courses an
 **Trace:** FR-06, FR-08, FR-10; TC-08.
 
 ### UC-09: Filter Assignments
+
 **Actor:** Student  
 **Goal:** Focus on work for one course or completion state.  
 **Preconditions:** At least one task exists.  
 **Trigger:** Student changes a filter.  
 **Main success scenario:**
+
 1. Student selects one course or All Courses.
 2. Student selects Pending, Completed, or All Statuses.
 3. TaskTrack displays tasks matching both filters, retaining due-date ordering where applicable.
@@ -154,11 +172,13 @@ The **student** is the main user of TaskTrack. Students add their own courses an
 **Trace:** FR-11; TC-11.
 
 ### UC-10: Return to Saved Assignments
+
 **Actor:** Student  
 **Goal:** Continue tracking work without re-entering it.  
 **Preconditions:** Student previously created at least one course and task and saved a completion status.  
 **Trigger:** Student reloads or reopens TaskTrack in the same configured workspace.  
 **Main success scenario:**
+
 1. Student reopens the application.
 2. TaskTrack reads persisted courses and tasks.
 3. TaskTrack reconstructs the list, associations, statuses, and dashboard counts.
