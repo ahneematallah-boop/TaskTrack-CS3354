@@ -1,0 +1,22 @@
+graph TaskTrack {
+  graph [fontname="DejaVu Sans", bgcolor="white", label="TaskTrack — Use-Case Diagram (P2)", labelloc="t", fontsize=20, pad=0.4, nodesep=0.33, ranksep=0.46];
+  node [fontname="DejaVu Sans", fontsize=11];
+  edge [color="#617184", penwidth=1.2];
+  student [label="Student", shape=box, style="rounded,filled", fillcolor="#e5edf5", color="#4b657d"];
+  subgraph cluster_system {
+    label="TaskTrack System"; style="rounded"; color="#71889a"; bgcolor="#f8fafc"; fontsize=15;
+    uc1 [label="UC-01\nAdd course", shape=ellipse, style=filled, fillcolor=white];
+    uc2 [label="UC-02\nEdit / remove course", shape=ellipse, style=filled, fillcolor=white];
+    uc3 [label="UC-03\nAdd assignment / exam", shape=ellipse, style=filled, fillcolor=white];
+    uc4 [label="UC-04\nEdit assignment / exam", shape=ellipse, style=filled, fillcolor=white];
+    uc5 [label="UC-05\nDelete assignment / exam", shape=ellipse, style=filled, fillcolor=white];
+    uc6 [label="UC-06\nView upcoming work", shape=ellipse, style=filled, fillcolor=white];
+    uc7 [label="UC-07\nChange completion status", shape=ellipse, style=filled, fillcolor=white];
+    uc8 [label="UC-08\nView dashboard", shape=ellipse, style=filled, fillcolor=white];
+    uc9 [label="UC-09\nFilter assignments", shape=ellipse, style=filled, fillcolor=white];
+    uc10 [label="UC-10\nReturn to saved work", shape=ellipse, style=filled, fillcolor=white];
+    {rank=same; uc1;uc2;} {rank=same;uc3;uc4;} {rank=same;uc5;uc6;} {rank=same;uc7;uc8;} {rank=same;uc9;uc10;}
+    uc1 -- uc2 [style=invis]; uc3 -- uc4 [style=invis]; uc5 -- uc6 [style=invis]; uc7 -- uc8 [style=invis]; uc9 -- uc10 [style=invis];
+  }
+  student -- {uc1 uc2 uc3 uc4 uc5 uc6 uc7 uc8 uc9 uc10};
+}
