@@ -4,7 +4,7 @@
 
 CS 3354 Software Engineering · UT Dallas · Fall 2026
 
-Ahmed Neematallah, Ittehadul Karim, Taha Khwaja, Matthew Oksanen, Jacqueline Rodriguez
+Ahmed Neematallah, Ittehadul Karim, Taha Khwaja, Matthew Oksanen, Jacqueline Rodriguez, Vinh Suo
 
 TaskTrack is a web application that keeps a college student's assignments in one place. A student adds assignments with a course and due date, sees them in deadline order, marks them complete, and reads a dashboard of pending, completed, and overdue work.
 
