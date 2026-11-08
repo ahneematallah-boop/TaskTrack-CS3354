@@ -1,4 +1,4 @@
-TaskTrack sequence: Add, complete, and reload a task
+# TaskTrack sequence: Add, complete, and reload a task
 
 Participants: Student, TaskTrack UI, Task logic, Input validation, Storage
 
