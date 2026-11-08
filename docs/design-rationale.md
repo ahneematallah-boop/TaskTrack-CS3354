@@ -86,14 +86,14 @@ Persistently stored information requires more error handling, however it is nece
 
 ## 3. Quality Attributes
 
-| Quality Attribute        | Design Approach               | Benefit |
-|--------------------------|------------------------------|---------|
-| Usability               | Dashboard, filters and forms  |         | Students are able to manage their tasks easily|
-| Maintainability         | Separation of responsibilities|         | Easier update and testing           |
-| Reliability             | Validation, error handling    |         | Persistsent storage                  |
-| Data consistency         | Calculated overdue and totals on dashboard   |         | Consistently updated information is provided|
-| Security                | Input validation              |         | Protection of information|
-| Simplicity              | Course, assignment, deadline   |         |
+| Quality Attribute | Design Approach | Benefit |
+| --- | --- | --- |
+| Usability | Dashboard, filters, and simple forms | Students can manage assignments easily |
+| Maintainability | Separation of responsibilities | Easier to update and test |
+| Reliability | Validation, error handling, and persistent storage | Reduces incorrect or lost information |
+| Data consistency | Calculated overdue status and dashboard totals | Keeps displayed information accurate |
+| Security | Input validation and appropriate access controls | Helps prevent unauthorized changes |
+| Simplicity | Focus on courses, assignments, and deadlines | Avoids unnecessary complexity |
 
 ## 4. Security Considerations
 
@@ -107,13 +107,13 @@ This approach allows focusing on prototype development and taking into account s
 
 ## 5. Overall Trade-offs
 
-| Design decision  Recommended Approach | Strength | Drawback |
-|---|---|---|
-| Application structure | Multilayer approach | Simplicity | Need more initial organization |
-| Assignment viewing | Dashboard filtering | Quick access | Can lead to a messy interface |
-| Assignment status tracking | Calculate deadline dynamically | Consistency | Needs date calculation logic |
-| Saving/deleting | Form validation / confirmation | Avoid accidental saving/error | Need extra actions |
-| Data storage | Persistent storage | Student info preservation | Error handling is needed |
+| Design Decision | Recommended Approach | Advantage | Trade-off |
+| --- | --- | --- | --- |
+| Application structure | Layered design | Easier maintenance | More initial organization |
+| Assignment display | Dashboard with filters | Faster access to deadlines | May become crowded |
+| Assignment status | Calculate overdue dynamically | More consistent data | Requires date calculations |
+| Saving and deletion | Validation and confirmation | Prevents accidental mistakes | Additional steps |
+| Data storage | Persistent storage | Preserves student information | Requires error handling |
 
 ## 6. Conclusion
 
