@@ -1,126 +1,185 @@
 # TaskTrack — P2 Design Rationale
 
-**Course:** CS 3354 – Software Engineering  
-**Project:** TaskTrack – Student Assignment Management System  
-**Contributor:** Jacqueline Rodriguez  
+**Course:** CS 3354 – Software Engineering
+**Project:** TaskTrack – Student Assignment Management System
+**Contributor:** Jacqueline Rodriguez
 **Milestone:** Project 2 – Analysis and High-Level Design
 
 ## 1. Purpose
 
-TaskTrack is intended to facilitate organization of the student's courses, assignments, exams, deadlines in one system. Design considerations for this system include: usability, maintainability, reliability, security and simplicity.
+TaskTrack is designed to help students organize their courses, assignments, exams, and deadlines in one place. The goal is to make it easier for students to see what they need to finish and keep track of their progress.
 
-In order to decide upon an implementation for this task, we took into account the requirements developed in the Project 1 and the use cases from Project 2.
+For Project 2, we considered different ways to design the system while keeping the requirements from Project 1 in mind. Our main priorities are usability, reliability, maintainability, security, and simplicity.
+
+This document explains the design decisions we recommend, the alternatives we considered, and the trade-offs involved.
 
 ## 2. Design Decisions and Alternatives
 
 ### 2.1 Application Structure
 
-We propose to separate the user interface, application logic and data storage.
+We propose separating TaskTrack into three main layers: the user interface, application logic, and data storage.
 
-User interface provides the possibility for the student to manage his assignments and courses. The application logic takes care of validating the entered data, manipulating the statuses of the assignments, calculating the due date and counting the dashboard totals. The data storage preserves the information of the student.
+The user interface allows students to add courses, manage assignments, and view their dashboard. The application logic handles input validation, assignment status, due dates, and dashboard calculations. The data layer stores courses and assignments.
 
-Two options can be considered here:
+We considered two options:
 
-- **Option A: Layered design.** The user interface, application logic and data storage are separated from each other.
-- **Option B: Tightly coupled design.** The same component contains more responsibilities.
+- **Option A: Layered design.** Keep the interface, logic, and storage responsibilities separate.
+- **Option B: Tightly coupled design.** Put most of the functionality together in fewer components.
 
-We recommend the Option A as it improves maintainability of TaskTrack. For example, the change of how overdue status of assignments is calculated does not have to affect dashboard.
+We recommend Option A because it makes the system easier to maintain and test. For example, changing how overdue assignments are calculated should not require rewriting the dashboard interface.
 
-The trade-off consists of the extra initial organization required for a layered design.
+The trade-off is that a layered design requires more initial planning and organization.
 
+**Related requirements:** NFR-13, NFR-14.
 **Related use cases:** UC-03, UC-06, UC-07, UC-08, UC-10.
 
 ### 2.2 Dashboard and Assignment Organization
 
-Students have to find out about deadlines in the upcoming weeks without opening all the courses.
+Students need a quick way to see upcoming deadlines without opening each course individually.
 
-We considered two ways of doing this task:
+We considered two options:
 
-- **Option A:** Provide students with a dashboard which includes the list of upcoming assignments and dashboard totals.
-- **Option B:** Provide the student with a course-only view requiring the opening of each course.
+- **Option A: Dashboard with upcoming assignments, status counts, and filters.**
+- **Option B: Course-only view where students open each course to see its assignments.**
 
-We propose the Option A which provides faster access for students.
+We recommend Option A because students can see their most important deadlines in one place.
 
-The dashboard must include numbers of pending, completed and overdue assignments and allow filtering the assignments according to their course and/or status.
+The dashboard should show pending, completed, and overdue assignment counts. Students should also be able to filter assignments by course and status.
 
-The possible trade-off of this design is the information overload which can be avoided by providing the most important information first.
+The trade-off is that showing too much information can make the dashboard crowded. We can reduce this problem by displaying the most important information first and keeping the layout simple.
 
+**Related requirements:** FR-3.1, FR-3.2, FR-5.2, FR-5.4, FR-6.1, FR-6.3, FR-6.4, NFR-1, NFR-2.
 **Related use cases:** UC-06, UC-08, UC-09.
 
 ### 2.3 Assignment Status and Overdue Calculation
 
-It has to be possible for TaskTrack to differentiate pending, completed and overdue assignments.
+TaskTrack needs to distinguish between pending, completed, and overdue assignments.
 
-We considered two possible ways:
+We considered two options:
 
-- **Option A:** Save Pending
-**Option B:** Enable saving and deleting immediately without further checks.
+- **Option A: Calculate overdue status using the assignment's due date and completion status.**
+- **Option B: Store overdue status as a separate value that must be updated whenever an assignment changes.**
 
-We recommend Option A as it allows avoiding user errors.
+We recommend Option A. When an incomplete assignment passes its deadline, TaskTrack can classify it as overdue automatically. A completed assignment should not be considered overdue.
 
-For instance, TaskTrack should verify that the assignment has a proper title, course, and due date. Prior to deleting an assignment, TaskTrack should ask user to confirm his/her intention.
+This approach avoids storing outdated overdue information. It also makes the dashboard more consistent when a student changes an assignment's due date or completion status.
 
-In case the user fails to save or delete his/her task, TaskTrack should notify the user about the failure and keep the previously saved information.
+The trade-off is that the system must recalculate overdue status when displaying assignments or updating dashboard totals.
 
-On the other hand, validation and confirmation increase the number of actions.
+**Related requirements:** FR-3.3, FR-4.1, FR-4.2, FR-4.3, FR-4.4, FR-6.1, FR-6.2.
+**Related use cases:** UC-06, UC-07, UC-08.
 
-**Related use cases:** UC-01, UC-02, UC-03, UC-04, UC-05.
+### 2.4 Input Validation and Deletion Confirmation
+
+Students may accidentally enter incorrect assignment information or delete something they still need.
+
+We considered two options:
+
+- **Option A: Validate assignment information and confirm deletion before removing saved data.**
+- **Option B: Save or delete information immediately without validation or confirmation.**
+
+We recommend Option A because it helps prevent avoidable mistakes.
+
+TaskTrack should require an assignment title, course, and valid due date. If the student enters invalid information, the system should display an error and allow the student to correct it.
+
+Before permanently deleting an assignment, TaskTrack should request confirmation. If the student cancels, the assignment should remain unchanged.
+
+The trade-off is that validation and confirmation require extra interactions, but these steps help protect the student's information.
+
+**Related requirements:** FR-2.1, FR-2.2, FR-2.3, FR-2.4, FR-2.5, FR-2.6, NFR-6.
+**Related use cases:** UC-03, UC-04, UC-05.
 
 ### 2.5 Data Storage and Reliability
 
-Students must have ability to close TaskTrack and use it again at some point in time without any problems.
+Students need their saved assignments to remain available after closing and reopening TaskTrack.
 
-There are two possible approaches here:
+We considered two options:
 
-**Option A:** Persistently stored information about courses, assignments and completion statuses.
+- **Option A: Persistent storage for courses, assignments, due dates, and completion statuses.**
+- **Option B: Temporary storage that only lasts during the current session.**
 
-**Option B:** Temporarily stored information only until current session ends.
+We recommend Option A because keeping assignments between sessions is one of TaskTrack's main requirements.
 
-We recommend Option A since students need access to previously saved information.
+When a student saves an assignment, the system should preserve the information and load it again when the application is reopened.
 
-In case it is impossible to load information, TaskTrack should notify user about error and show him/her information about empty list of assignments instead of an incorrect view.
+If saving or loading fails, TaskTrack should display an error rather than silently losing information. The interface should also avoid presenting a failed load as an intentionally empty assignment list.
 
-Persistently stored information requires more error handling, however it is necessary to implement the core goal of the application.
+Persistent storage requires additional error handling, but it is necessary for TaskTrack to be useful.
 
-**Related use case:** UC-10.
+**Related requirements:** FR-2.7, NFR-4, NFR-5, NFR-6.
+**Related use cases:** UC-01, UC-03, UC-04, UC-05, UC-07, UC-10.
 
 ## 3. Quality Attributes
 
-| Quality Attribute | Design Approach | Benefit |
+The following quality attributes explain what the design should support and how the team can evaluate it.
+
+The measurable targets below are proposed design and acceptance targets, not completed test results. They should be confirmed with the team and checked during implementation and testing.
+
+| Quality Attribute | Design Approach | Proposed Measure or Target |
 | --- | --- | --- |
-| Usability | Dashboard, filters, and simple forms | Students can manage assignments easily |
-| Maintainability | Separation of responsibilities | Easier to update and test |
-| Reliability | Validation, error handling, and persistent storage | Reduces incorrect or lost information |
-| Data consistency | Calculated overdue status and dashboard totals | Keeps displayed information accurate |
-| Security | Input validation and appropriate access controls | Helps prevent unauthorized changes |
-| Simplicity | Focus on courses, assignments, and deadlines | Avoids unnecessary complexity |
+| Usability | Simple forms, dashboard, and clear labels | A first-time student should be able to add an assignment without instructions. Core actions should be accessible within two clicks or taps from the main screen. |
+| Performance | Keep assignment loading and calculations efficient | Pages and lists should load within 3 seconds with up to 200 assignments under normal test conditions. |
+| Responsiveness | Update views after assignment changes | Assignment changes should appear on screen within 1 second. |
+| Reliability | Persistent storage and error handling | Saved assignments should remain available after reopening the application. Failed saves and loads should show an error. |
+| Data consistency | Calculate overdue status from deadlines and completion | Dashboard counts and assignment statuses should match the stored data after each successful change. |
+| Security | Validate input and restrict access if accounts are supported | Invalid input should be rejected, and passwords must never be stored in plain text if accounts are implemented. |
+| Maintainability | Separate the interface, application logic, and data storage | Code should have clear responsibilities and changes should be reviewed before merging. |
+| Compatibility | Responsive browser-based interface | The application should work in current versions of Chrome, Firefox, Safari, and Edge, including mobile-sized layouts. |
+
+**Related requirements:** NFR-1 through NFR-14.
+
+The team can evaluate these targets using basic functional tests, timing checks, browser testing, and review of the implementation.
 
 ## 4. Security Considerations
 
-TaskTrack should verify the information prior to saving the changes as well as protect the student information.
+TaskTrack should validate user input before saving data and avoid exposing student information unnecessarily.
 
-In Project 1 it is stated that making account registration optional. If accounts are used, the design should support authentication and access only to specific student data. Also passwords must be safely hashed and not stored in plain text format.
+Project 1 includes optional account requirements, FR-1.1 and FR-1.2. The team must decide whether account registration and login are part of the current implementation.
 
-In case the team decides to use single-user prototype, multi-user authentication must be recognized as out-of-scope requirement.
+If accounts are implemented, TaskTrack should authenticate users, restrict access to their own information, and store passwords using secure password hashing.
 
-This approach allows focusing on prototype development and taking into account security considerations in the future.
+If the team chooses a single-user prototype, FR-1.1 and FR-1.2 should be explicitly marked as deferred. They should not be presented as completed features.
+
+Input validation is still important in either design. It helps prevent invalid information from being stored and supports safer data handling.
+
+**Related requirements:** FR-1.1, FR-1.2, FR-2.3, NFR-11, NFR-12.
 
 ## 5. Overall Trade-offs
 
 | Design Decision | Recommended Approach | Advantage | Trade-off |
 | --- | --- | --- | --- |
-| Application structure | Layered design | Easier maintenance | More initial organization |
-| Assignment display | Dashboard with filters | Faster access to deadlines | May become crowded |
-| Assignment status | Calculate overdue dynamically | More consistent data | Requires date calculations |
-| Saving and deletion | Validation and confirmation | Prevents accidental mistakes | Additional steps |
-| Data storage | Persistent storage | Preserves student information | Requires error handling |
+| Application structure | Layered design | Easier maintenance and testing | More initial organization |
+| Assignment display | Dashboard with filters | Faster access to deadlines | Can become crowded |
+| Assignment status | Calculate overdue dynamically | More consistent information | Requires repeated date calculations |
+| Input validation | Validate before saving | Reduces incorrect entries | Adds validation logic |
+| Assignment deletion | Require confirmation | Helps prevent accidental deletion | Adds an extra step |
+| Data storage | Persistent storage | Preserves assignments between sessions | Requires error handling |
+| Account access | Confirm scope before implementation | Avoids unnecessary prototype complexity | Single-user mode does not provide private multi-user accounts |
 
-## 6. Conclusion
+These decisions focus on making TaskTrack practical for students without adding unnecessary complexity.
 
-The presented design ensures the simplicity, reliability, and effectiveness of TaskTrack.
+## 6. Connection to Project 1 Requirements
 
-Recommendation is to separate functionality, use dashboard, validate the input information of assignments, calculate deadline of them dynamically, and use persistent storage for saved assignments.
+The design decisions were selected to support the requirements and use cases already documented in Project 1.
 
-These approaches meet the Project 1 specifications and use cases from Project 2.
+| Design Decision | P1 Requirements | Related Use Cases |
+| --- | --- | --- |
+| Layered architecture | NFR-13, NFR-14 | UC-03, UC-06, UC-07, UC-08, UC-10 |
+| Dashboard and filters | FR-3.1, FR-5.2, FR-5.4, FR-6.1, FR-6.3, FR-6.4 | UC-06, UC-08, UC-09 |
+| Dynamic overdue calculation | FR-3.3, FR-4.4, FR-6.2 | UC-06, UC-07, UC-08 |
+| Input validation | FR-2.1, FR-2.2, FR-2.3 | UC-03, UC-04 |
+| Deletion confirmation | FR-2.5, FR-2.6 | UC-05 |
+| Persistent storage | FR-2.7, NFR-4, NFR-6 | UC-03, UC-04, UC-07, UC-10 |
+| Optional account access | FR-1.1, FR-1.2, NFR-11 | Requires a team decision |
 
-Further technical decisions must be verified with the Architecture and Prototype Team.
+These connections should remain consistent with the architecture, models, and prototype developed by the other team members.
+
+## 7. Conclusion
+
+For TaskTrack, we recommend a layered design, a dashboard with assignment filters, automatic overdue calculations, input validation, deletion confirmation, and persistent storage.
+
+These decisions support the main requirements from Project 1 while keeping the application manageable for the team.
+
+The main trade-off is that some features require additional logic and planning, but they help make TaskTrack more reliable and easier to use.
+
+The final implementation details, account scope, and proposed quality targets should be confirmed with the architecture and prototype team before the project moves into development.
