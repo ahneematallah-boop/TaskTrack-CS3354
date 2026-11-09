@@ -23,14 +23,13 @@ The local backend supports the P2 design with a runnable API. See [Architecture]
 
 Read the documents in this order. Each one builds on the one before it.
 
-| # | Document | Contents | Owner |
-|---|---|---|---|
-| 1 | [Problem and Scope](docs/problem-and-scope.md) | Problem statement, stakeholders, feasibility, included and excluded features | Ahmed |
-| 2 | [Requirements](docs/Requirements.md) | Functional requirements FR-1.1 to FR-6.4, non-functional requirements NFR-1 to NFR-14, priorities | Taha |
-| 3 | [Use Cases](docs/Use_Case.md) | Actors, UC-01 to UC-10 with main, alternate, and exception flows, traceability to requirements | Matthew |
-| 4 | [Team Plan](docs/team-plan.md) | Roles, working agreement, milestones, risks | Jackie |
-| 5 | [Contributing](CONTRIBUTING.md) | Branch and pull request workflow, review checks | Karim |
-
+Member	P2 responsibility
+Ahmed	Use-case analysis
+Ittehadul Karim	Architecture and backend
+Taha Khwaja	High-level design
+Jacqueline Rodriguez	Design rationale and quality trade-offs
+Vinh Tang	Models and traceability
+Matthew Oksanen	Prototype and integration
 ## Person 2 — Architecture and backend
 
 - [Architecture, component diagram, and deployment](docs/architecture.md)
