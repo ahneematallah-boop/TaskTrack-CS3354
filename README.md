@@ -37,6 +37,7 @@ Read the documents in this order. Each one builds on the one before it.
 - [API contract and smoke workflow](docs/api.md)
 - [Frontend integration boundary](frontend/README.md)
 - [Backend integration tests](tests/test_backend.py)
+- [Person 2 contribution evidence](docs/person-2-contribution.md)
 
 ## Repository design
 

@@ -107,6 +107,8 @@ This setup is for a local single-user demonstration. The Flask development serve
 
 ## 8. Verification and handoff
 
+[Person 2 contribution evidence](person-2-contribution.md) records the owned issue, implementation commit, and pull request for the final report.
+
 Run the same backend tests as CI:
 
 ```sh
