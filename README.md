@@ -3,65 +3,76 @@
 
 [![Docs Review](https://github.com/ahneematallah-boop/TaskTrack-CS3354/actions/workflows/docs-review.yml/badge.svg)](https://github.com/ahneematallah-boop/TaskTrack-CS3354/actions/workflows/docs-review.yml)
 
-**CS 3354 — Software Engineering**  
-**University of Texas at Dallas | Fall 2026**
+**Course:** CS 3354 — Software Engineering  
+**University:** University of Texas at Dallas  
+**Semester:** Fall 2026
 
-**Team Members:** Ahmed Neematallah, Ittehadul Karim, Taha Khwaja, Matthew Oksanen, Jacqueline Rodriguez, and Vinh Tang
+**Team Members:**
+- Ahmed Neematallah
+- Ittehadul Karim
+- Matthew Oksanen
+- Jacqueline Rodriguez
+- Vinh Tang
+- Taha Khwaja
 
 ## Project Overview
 
-TaskTrack is a web application designed to help college students manage their courses, assignments, exams, and deadlines in one place.
+TaskTrack is a web application designed to help college students organize their courses, assignments, exams, and deadlines in one place.
 
-Students can add courses and assignments, set due dates, view upcoming deadlines, and mark assignments as completed. TaskTrack also provides a dashboard displaying pending, completed, and overdue assignments.
+Students can add courses and assignments, set due dates, view upcoming work, and mark assignments as completed. The application also provides a dashboard showing pending, completed, and overdue assignments.
 
-Our goal is to make it easier for students to keep track of their schoolwork without constantly checking multiple course platforms or managing separate to-do lists.
+Our goal is to make it easier for students to manage their schoolwork without constantly switching between course platforms or keeping separate to-do lists.
 
-This repository contains our work for both Project 1 (Proposal and Requirements) and Project 2 (Analysis and High-Level Design).
+This repository contains our work for Project 1 (Proposal and Requirements) and Project 2 (Analysis and High-Level Design).
 
 ## Project Status
 
 | Phase | Status |
 | --- | --- |
 | Project 1 — Proposal and Requirements | Completed |
-| Project 2 — Analysis and High-Level Design | Documentation available; final integration in progress |
-| Backend implementation | Local API and SQLite persistence available |
-| Frontend prototype | Integration and evidence being finalized |
-| Testing | Backend integration tests available; full browser testing pending |
+| Project 2 — Analysis and High-Level Design | Main deliverables added to repository |
+| Use-case analysis | Completed |
+| Architecture and high-level design | Completed |
+| Design rationale | Completed |
+| Models and traceability | Completed |
+| Frontend prototype | Implemented with backend integration |
+| Backend | Flask API with SQLite persistence |
+| Testing | Backend integration tests available; additional browser testing pending |
 
-Project 2 builds on the requirements and use cases established during Project 1. We are continuing with the same TaskTrack application rather than creating a separate project.
+Project 2 builds on the requirements and use cases from Project 1. We are continuing with the same TaskTrack application instead of starting a separate project.
 
 ---
 
 ## Project 1 — Proposal and Requirements
 
-Project 1 focused on defining the problem, identifying stakeholders, establishing system requirements, and explaining how students would interact with TaskTrack.
+Project 1 focused on identifying the problem, defining the scope, gathering requirements, and explaining how students would interact with TaskTrack.
 
 ### Project 1 Documentation
 
 | Document | Description | Owner |
 | --- | --- | --- |
 | [Problem and Scope](docs/problem-and-scope.md) | Problem statement, stakeholders, feasibility, and scope | Ahmed |
-| [Requirements](docs/Requirements.md) | Functional and nonfunctional requirements and priorities | Taha |
+| [Requirements](docs/Requirements.md) | Functional and nonfunctional requirements | Taha |
 | [Use Cases](docs/Use_Case.md) | Ten use cases with main, alternate, and exception flows | Matthew |
 | [Team Plan](docs/team-plan.md) | Team responsibilities, milestones, and risks | Jackie |
-| [Contributing Guidelines](CONTRIBUTING.md) | Repository organization and GitHub workflow | Karim |
+| [Contributing Guidelines](CONTRIBUTING.md) | GitHub workflow and repository organization | Karim |
 
 ### Project 1 Feedback
 
 Our Project 1 submission received 30/40 points.
 
-The professor highlighted the repository organization, documentation structure, contribution tracking, and detailed use cases as strengths.
+The professor highlighted our repository organization, documentation structure, contribution tracking, and detailed use cases as strengths.
 
-The feedback also identified several areas for improvement:
+The feedback also identified areas for improvement:
 
 - Add acceptance criteria to functional requirements.
 - Make nonfunctional requirements measurable.
 - Provide stronger evidence for stakeholder needs and feasibility.
-- Improve the team plan with clear decision rules, milestones, and risk owners.
+- Improve team planning and risk management.
 - Clarify whether account requirements FR-1.1 and FR-1.2 are included or deferred.
 - Maintain traceability between requirements and design documents.
 
-We are using this feedback to guide Project 2 and the remaining development work.
+We used this feedback to guide our Project 2 design and documentation.
 
 ### Project 1 — Team Responsibilities
 
@@ -72,17 +83,23 @@ We are using this feedback to guide Project 2 and the remaining development work
 | Matthew Oksanen | Use cases and traceability |
 | Jacqueline Rodriguez | Team planning, milestones, and risks |
 | Ittehadul Karim | Repository organization and final review |
-| Vinh Tang | Models, sequence diagram |
+| Vinh Tang | Models and sequence diagram |
 
 ---
 
 ## Project 2 — Analysis and High-Level Design
 
-Project 2 focuses on explaining how TaskTrack will work before completing the final implementation.
+Project 2 focuses on explaining how TaskTrack works, how its components interact, and how the design supports the original requirements.
 
-This includes use-case analysis, system architecture, high-level design, design rationale, models, requirements traceability, and prototype evidence.
+Our Project 2 deliverables include:
 
-We are keeping the same TaskTrack project and building on our existing Project 1 documentation.
+- Use-case analysis and diagrams.
+- System architecture and interfaces.
+- High-level design and database models.
+- Design rationale and quality trade-offs.
+- Sequence diagrams and requirements traceability.
+- Frontend prototype and integration.
+- Individual contribution evidence.
 
 ### Project 2 — Team Responsibilities
 
@@ -95,31 +112,34 @@ We are keeping the same TaskTrack project and building on our existing Project 1
 | Person 5 | Vinh Tang | Models, sequence diagram, and requirements traceability |
 | Person 6 | Taha Khwaja | Prototype and integration |
 
-Each member is responsible for completing their assigned section, committing their changes, and participating in the GitHub review process.
+Each member was responsible for completing their assigned section and contributing to the project through GitHub.
 
 ### Project 2 Documentation
 
 | Section | Document | Description |
 | --- | --- | --- |
-| Use-Case Analysis | [P2 Use-Case Analysis](docs/p2-use-case-analysis.md) | Main flows, alternate flows, exceptions, and system interactions |
-| Use-Case Diagram | [Use-Case Diagram](docs/diagrams/tasktrack-use-cases.png) | Visual representation of student interactions |
-| Architecture | [Architecture and Deployment](docs/architecture.md) | Components, interfaces, and deployment assumptions |
-| High-Level Design | [High-Level Design](docs/high-level-design.md) | System classes, data model, and design structure |
-| Class Diagram | [Class Diagram](docs/diagrams/class-diagram.png) | Main system classes and relationships |
+| Use-Case Analysis | [P2 Use-Case Analysis](docs/p2-use-case-analysis.md) | Main flows, alternate flows, and exceptions |
+| Use-Case Diagram | [Use-Case Diagram](docs/diagrams/tasktrack-use-cases.png) | Student interactions with the system |
+| Architecture | [Architecture](docs/architecture.md) | System components, interfaces, and deployment |
+| Architecture Diagram | [Architecture Diagram](diagrams/architecture.png) | Overview of system layers |
+| High-Level Design | [High-Level Design](docs/high-level-design.md) | Class structure and data model |
+| Class Diagram | [Class Diagram](docs/diagrams/class-diagram.png) | Classes and relationships |
 | ER Diagram | [ER Diagram](docs/diagrams/er-diagram.png) | Database entities and relationships |
-| Design Rationale | [Design Rationale](docs/design-rationale.md) | Design decisions, alternatives, and trade-offs |
-| Sequence Diagram | [Sequence Diagram](docs/diagrams/student-use-cases-sequence.svg) | Student interactions with system components |
-| Traceability | [Requirements Traceability Table](docs/traceability-table.md) | Connections between requirements, use cases, design, and prototype |
-| API Design | [API Contract](docs/api.md) | Backend endpoints and frontend integration |
-| Prototype | [Frontend Integration Guide](frontend/README.md) | Frontend integration and prototype expectations |
+| Design Rationale | [Design Rationale](docs/design-rationale.md) | Design decisions and trade-offs |
+| Sequence Diagram | [Sequence Diagram](docs/diagrams/student-use-cases-sequence.svg) | Student and system interactions |
+| Traceability | [Traceability Table](docs/traceability-table.md) | Requirements, use cases, design, and prototype mappings |
+| API | [API Contract](docs/api.md) | Backend API endpoints |
+| Prototype | [Frontend Prototype](frontend/README.md) | Frontend implementation, setup, and screen coverage |
 
-### 1. Use-Case Analysis
+---
 
-**Owner: Ahmed Neematallah**
+## 1. Use-Case Analysis
 
-The main actor in TaskTrack is the student.
+**Contributor: Ahmed Neematallah**
 
-Project 2 builds on the ten use cases defined in Project 1.
+The primary actor in TaskTrack is the student.
+
+We continued using the ten use cases established in Project 1.
 
 | ID | Use Case |
 | --- | --- |
@@ -134,169 +154,231 @@ Project 2 builds on the ten use cases defined in Project 1.
 | UC-09 | Filter assignments by course or status |
 | UC-10 | Return to saved assignments |
 
-The use-case analysis describes the student's goals, system responsibilities, main interactions, alternate flows, and error handling.
+The use-case analysis describes each interaction, including the main flow, alternate flows, input validation, and error handling.
 
-It also connects the use cases to the functional requirements from Project 1.
+It also connects the use cases to their related Project 1 requirements.
 
-**Documents:**
-
-- [P2 Use-Case Analysis](docs/p2-use-case-analysis.md)
+**Deliverables:**
+- [Use-Case Analysis](docs/p2-use-case-analysis.md)
 - [Use-Case Diagram](docs/diagrams/tasktrack-use-cases.png)
 
-### 2. System Architecture and Backend
+**Contribution Evidence:**
+- [Ahmed's Pull Request #2](https://github.com/ahneematallah-boop/TaskTrack-CS3354/pull/2)
 
-**Owner: Ittehadul Karim**
+---
 
-TaskTrack uses a layered design that separates the frontend, application logic, and data storage.
+## 2. System Architecture and Backend
 
-The main components are:
+**Contributor: Ittehadul Karim**
 
-**Frontend:** Allows students to manage courses, assignments, deadlines, and completion status.
+TaskTrack uses a layered architecture separating the user interface, application logic, and data storage.
 
-**Application Logic:** Handles input validation, assignment management, deadline calculations, and dashboard updates.
+The main components include:
 
-**Data Storage:** Stores courses, assignments, due dates, and completion statuses.
+**Frontend:** Allows students to interact with the dashboard, courses, and assignments.
 
-The repository includes a Flask-based backend, SQLite database support, and an API contract for frontend integration.
+**Application Logic:** Handles input validation, assignment operations, due-date calculations, and dashboard updates.
 
-The layered structure keeps responsibilities separate and makes the application easier to maintain and test.
+**Database:** Stores courses, assignments, deadlines, and completion statuses.
 
-**Documents:**
+The backend uses Flask and SQLite for local development.
 
-- [Architecture and Deployment](docs/architecture.md)
+An API contract describes the communication between the frontend and backend.
+
+The architecture also defines component responsibilities and deployment assumptions.
+
+**Deliverables:**
+- [Architecture Document](docs/architecture.md)
 - [Architecture Diagram](diagrams/architecture.png)
 - [API Contract](docs/api.md)
-- [Backend Integration Tests](tests/test_backend.py)
-- [Person 2 Contribution Evidence](docs/person-2-contribution.md)
+- [Backend Tests](tests/test_backend.py)
+- [Person 2 Contribution Record](docs/person-2-contribution.md)
 
-### 3. High-Level Design
+**Contribution Evidence:**
+- [Karim's Pull Request #8](https://github.com/ahneematallah-boop/TaskTrack-CS3354/pull/8)
+- [Karim's Issue #7](https://github.com/ahneematallah-boop/TaskTrack-CS3354/issues/7)
 
-**Owner: Matthew Oksanen**
+---
 
-The high-level design explains the main system objects, their responsibilities, and how they relate to each other.
+## 3. High-Level Design
 
-TaskTrack's main data concepts include students, courses, and assignments.
+**Contributor: Matthew Oksanen**
 
-A course organizes assignments, while each assignment contains information such as its title, description, due date, and completion status.
+The high-level design explains TaskTrack's main objects, responsibilities, and relationships.
 
-The high-level design includes class and entity-relationship diagrams to show the proposed system structure.
+The system is organized around courses and assignments.
 
-**Documents:**
+A course can contain multiple assignments. Each assignment includes information such as its title, description, due date, and completion status.
 
+The high-level design uses class and entity-relationship diagrams to show how the system is structured.
+
+These models help connect the functional requirements to the proposed implementation.
+
+**Deliverables:**
 - [High-Level Design](docs/high-level-design.md)
 - [Class Diagram](docs/diagrams/class-diagram.png)
 - [ER Diagram](docs/diagrams/er-diagram.png)
 
-### 4. Design Rationale and Quality Trade-offs
+**Contribution Evidence:**
+- [High-Level Design Pull Request #6](https://github.com/ahneematallah-boop/TaskTrack-CS3354/pull/6)
 
-**Owner: Jacqueline Rodriguez**
+---
 
-This section explains why we selected our proposed design approaches and what alternatives we considered.
+## 4. Design Rationale and Quality Trade-offs
 
-Our main design decisions include:
+**Contributor: Jacqueline Rodriguez**
 
-- Using a layered architecture instead of combining all functionality into one component.
-- Providing a dashboard so students can view deadlines in one place.
-- Calculating overdue status based on due dates and completion status.
-- Validating information before saving assignments.
-- Requiring confirmation before permanently deleting assignments.
-- Using persistent storage so students do not lose their saved work.
+This section explains the major design decisions made for TaskTrack and why certain approaches were selected.
 
-These decisions focus on usability, reliability, maintainability, security, and simplicity.
+The main design decisions include:
 
-The design rationale also discusses trade-offs, including extra development work, additional validation, and the complexity of maintaining consistent information.
+- Using a layered architecture.
+- Providing a dashboard for upcoming assignments.
+- Calculating overdue status automatically.
+- Validating assignment information before saving.
+- Requiring confirmation before deleting assignments.
+- Using persistent storage.
 
-The proposed quality targets are connected to our Project 1 requirements.
+We compared different approaches and considered their advantages and disadvantages.
 
-**Document:**
+The design decisions focus on usability, reliability, maintainability, security, and simplicity.
 
-- [Design Rationale and Quality Trade-offs](docs/design-rationale.md)
+We also included proposed measurable quality targets based on the Project 1 requirements.
 
-### 5. Models and Requirements Traceability
+**Deliverable:**
+- [Design Rationale](docs/design-rationale.md)
 
-**Owner: Vinh Tang**
+**Contribution Evidence:**
+- [Jackie's Pull Request #5](https://github.com/ahneematallah-boop/TaskTrack-CS3354/pull/5)
+- [Jackie's Issue #4](https://github.com/ahneematallah-boop/TaskTrack-CS3354/issues/4)
 
-This section explains how TaskTrack's requirements relate to use cases, system components, and the proposed prototype.
+---
 
-The sequence diagram shows how the student interacts with the TaskTrack interface, application logic, validation, and data storage.
+## 5. Models and Requirements Traceability
 
-It covers important actions such as adding assignments, changing completion status, and reopening the application to view saved work.
+**Contributor: Vinh Tang**
 
-The requirements traceability table connects:
+This section connects TaskTrack's requirements to its use cases, design components, and prototype.
+
+The sequence diagram describes how the student interacts with the system when adding assignments, updating completion status, and returning to saved work.
+
+The traceability table connects:
 
 1. Project 1 functional and nonfunctional requirements.
 2. Related use cases.
-3. Proposed design components.
-4. Prototype screens and expected evidence.
+3. Design components.
+4. Prototype screens or expected evidence.
 
-This helps the team verify that the proposed design supports the original requirements.
+The table helps verify that important requirements are represented in the proposed design.
 
-**Documents:**
-
+**Deliverables:**
 - [Sequence Diagram](docs/diagrams/student-use-cases-sequence.svg)
 - [Sequence Description](docs/diagrams/student-table-sequence.md)
-- [Requirements Traceability Table](docs/traceability-table.md)
+- [Traceability Table](docs/traceability-table.md)
 
-### 6. Prototype and Integration
+**Contribution Evidence:**
+- [Vinh's Pull Request #3](https://github.com/ahneematallah-boop/TaskTrack-CS3354/pull/3)
 
-**Owner: Taha Khwaja**
+---
 
-The prototype is intended to demonstrate how students will interact with TaskTrack.
+## 6. Prototype and Integration
 
-The planned interface includes:
+**Contributor: Taha Khwaja**
 
-- Dashboard with pending, completed, and overdue assignments.
+The frontend prototype demonstrates how a student can interact with TaskTrack.
+
+The prototype includes:
+
+- A dashboard showing assignment status counts.
 - Course management.
-- Add and edit assignment forms.
-- Upcoming assignments list.
+- Assignment creation and editing.
+- Upcoming assignment lists.
 - Completion status controls.
 - Course and status filters.
+- Assignment deletion confirmation.
+- Validation and error messages.
 
-The frontend should follow the use-case analysis and connect to the backend through the documented API.
+The frontend uses HTML, CSS, and JavaScript.
 
-Prototype screenshots and evidence will be linked once the team's frontend contribution is finalized.
+It communicates with the Flask backend using the documented API.
 
-**Documents:**
+The prototype includes a local development server that serves the frontend and forwards API requests to the backend.
 
-- [Frontend Integration Guide](frontend/README.md)
-- [API Contract](docs/api.md)
+### Prototype Files
 
-### Account Access and Scope
+| File | Purpose |
+| --- | --- |
+| [index.html](frontend/index.html) | Main interface and page structure |
+| [style.css](frontend/style.css) | Styling and responsive layouts |
+| [app.js](frontend/app.js) | Application interactions and API requests |
+| [dev_server.py](frontend/dev_server.py) | Local frontend server and API proxy |
+| [Frontend README](frontend/README.md) | Setup instructions and screen coverage |
+
+### Prototype Evidence
+
+The frontend documentation references screenshots for the following interactions:
+
+| Screen | Related Use Cases |
+| --- | --- |
+| Dashboard | UC-06, UC-08 |
+| Assignment List | UC-06, UC-07, UC-09 |
+| Add/Edit Assignment | UC-03, UC-04 |
+| Validation Errors | UC-03, UC-04 |
+| Delete Confirmation | UC-05 |
+| Course Management | UC-01, UC-02 |
+| Course and Status Filters | UC-09 |
+| Saved Work After Restart | UC-10 |
+
+**Prototype Documentation:**
+- [Frontend Guide and Screenshot Links](frontend/README.md)
+- [Person 6 Contribution Record](docs/Person%206%20Contribution)
+
+The contribution record describes manual browser verification of the main screens and interactions.
+
+Automated browser testing and complete cross-browser testing remain future work.
+
+---
+
+## 7. Account Access and Project Scope
 
 Project 1 included optional account requirements FR-1.1 and FR-1.2.
 
-The team must confirm whether account registration and authentication are included in the current implementation or deferred to a future version.
+For the current single-user prototype, account registration and login are deferred.
 
-If the prototype is single-user, those requirements should be explicitly marked as deferred rather than presented as completed features.
+This allows the team to focus on assignment management, course organization, dashboard functionality, and data persistence.
 
-The architecture, traceability table, and prototype should reflect the same decision.
+Authentication and private multi-user accounts can be considered in a future version.
+
+The deferred account functionality should not be presented as an implemented feature.
 
 ---
 
-## Individual Contribution Evidence
+## 8. Individual Contribution Evidence
 
-We use GitHub issues, branches, commits, and pull requests to track each member's work.
+We use GitHub issues, branches, commits, and pull requests to document team contributions.
 
-Each contributor should have evidence showing:
+The following table identifies the main Project 2 responsibilities and available GitHub evidence.
 
-- Their assigned task.
-- Files or diagrams they created or updated.
-- Commits made under their GitHub account.
-- Pull requests and reviews.
-- A short explanation of their individual contribution.
+| Member | P2 Responsibility | Evidence |
+| --- | --- | --- |
+| Ahmed Neematallah | Use-case analysis | [PR #2](https://github.com/ahneematallah-boop/TaskTrack-CS3354/pull/2) |
+| Ittehadul Karim | Architecture and backend | [PR #8](https://github.com/ahneematallah-boop/TaskTrack-CS3354/pull/8) |
+| Matthew Oksanen | High-level design | [PR #6](https://github.com/ahneematallah-boop/TaskTrack-CS3354/pull/6) |
+| Jacqueline Rodriguez | Design rationale | [PR #5](https://github.com/ahneematallah-boop/TaskTrack-CS3354/pull/5) |
+| Vinh Tang | Models and traceability | [PR #3](https://github.com/ahneematallah-boop/TaskTrack-CS3354/pull/3) |
+| Taha Khwaja | Prototype and integration | [Contribution Record](docs/Person%206%20Contribution) |
 
-Relevant GitHub links:
+Additional contribution history can be found through:
 
 - [Commit History](https://github.com/ahneematallah-boop/TaskTrack-CS3354/commits/main/)
-- [Pull Requests](https://github.com/ahneematallah-boop/TaskTrack-CS3354/pulls?q=is%3Apr)
-- [Issues](https://github.com/ahneematallah-boop/TaskTrack-CS3354/issues)
-- [Person 2 Contribution Record](docs/person-2-contribution.md)
+- [All Pull Requests](https://github.com/ahneematallah-boop/TaskTrack-CS3354/pulls?q=is%3Apr)
+- [GitHub Issues](https://github.com/ahneematallah-boop/TaskTrack-CS3354/issues)
 
-The final Project 2 contribution record should summarize the actual work completed by all six members.
+These records show the work contributed to the repository and help document individual responsibilities.
 
 ---
 
-## Repository Structure
+## 9. Repository Structure
 
 ```text
 TaskTrack-CS3354/
@@ -314,6 +396,8 @@ TaskTrack-CS3354/
 │   ├── traceability-table.md
 │   ├── api.md
 │   ├── person-2-contribution.md
+│   ├── Person 6 Contribution
+│   ├── screenshots/
 │   └── diagrams/
 │       ├── tasktrack-use-cases.png
 │       ├── tasktrack-use-cases.dot
@@ -325,7 +409,11 @@ TaskTrack-CS3354/
 │   ├── architecture.png
 │   └── architecture.svg
 ├── frontend/
-│   └── README.md
+│   ├── README.md
+│   ├── index.html
+│   ├── style.css
+│   ├── app.js
+│   └── dev_server.py
 ├── backend/
 ├── data/
 ├── tests/
@@ -335,100 +423,152 @@ TaskTrack-CS3354/
     └── workflows/
 ```
 
-The repository keeps documentation, diagrams, source code, and testing files organized in separate directories.
+The repository separates documentation, diagrams, application code, and testing files to make the project easier to navigate and maintain.
 
 ---
 
-## Development and Testing
+## 10. Running the Prototype
 
-The repository includes backend functionality supporting course and assignment management.
+The frontend and backend run locally.
 
-The backend uses Flask and SQLite for local development.
+### Backend Setup
 
-The API contract describes how the frontend and backend communicate.
+From the repository root:
 
-Backend integration tests are available to check core API functionality.
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r backend/requirements.txt
+python -m backend.app
+```
 
-Complete frontend and browser integration testing remains part of the remaining work.
+### Frontend Setup
 
-For setup and testing information, see:
+Open another terminal in the repository root and run:
 
-- [Architecture and Setup](docs/architecture.md)
-- [API Contract](docs/api.md)
-- [Frontend Integration Guide](frontend/README.md)
-- [Backend Tests](tests/test_backend.py)
+```bash
+python3 frontend/dev_server.py
+```
+
+Open the application at:
+
+http://localhost:5173
+
+The frontend development server forwards API requests to the backend running on port 5000.
+
+For additional details, see:
+
+- [Frontend Setup](frontend/README.md)
+- [Backend Architecture](docs/architecture.md)
+- [API Documentation](docs/api.md)
 
 ---
 
-## GitHub Workflow
+## 11. Testing and Verification
 
-Our team uses GitHub branches and pull requests to organize contributions.
+TaskTrack includes backend integration tests and automated documentation checks.
+
+### Backend Testing
+
+The repository includes integration tests for the backend API.
+
+These tests help verify core course and assignment operations.
+
+Run the tests using:
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+### Requirements Traceability
+
+The repository includes a script that checks references to requirement IDs.
+
+Run:
+
+```bash
+python scripts/check_traceability.py
+```
+
+### Frontend Verification
+
+The prototype contribution documentation describes manual checks of:
+
+- Dashboard navigation.
+- Course and assignment management.
+- Validation errors.
+- Delete confirmation.
+- Status changes and filtering.
+- Data persistence after reopening the application.
+
+Cross-browser testing, phone-size testing, and automated browser tests are not fully completed.
+
+---
+
+## 12. GitHub Workflow
+
+Our team uses GitHub to organize work and track contributions.
 
 The general workflow is:
 
-1. Create or claim an issue for the assigned work.
-2. Create a separate branch.
-3. Add or update the relevant files.
-4. Commit changes with a descriptive message.
+1. Create or claim an issue.
+2. Create a branch for the assigned work.
+3. Add or update the necessary files.
+4. Commit the changes.
 5. Push the branch to GitHub.
 6. Open a pull request.
 7. Review the changes and automated checks.
-8. Merge approved changes into the main branch.
+8. Merge the approved changes into `main`.
 
-This workflow allows us to track individual contributions and reduces conflicts between team members.
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for the full workflow.
-
-## Automated Documentation Checks
-
-The repository uses GitHub Actions to help check documentation changes.
-
-The Docs Review workflow includes:
+The repository also includes automated documentation checks.
 
 | Check | Purpose |
 | --- | --- |
-| Markdown lint | Detect formatting problems |
-| Relative link check | Check links between repository documents |
+| Markdown lint | Detect documentation formatting errors |
+| Relative link check | Verify links between repository files |
 | Requirements traceability | Detect references to undefined requirement IDs |
 
-All Project 2 documents should use requirement IDs already defined in `docs/Requirements.md`.
+All Project 2 documents should use the requirement IDs already defined in `docs/Requirements.md`.
 
-The automated checks help prevent documentation problems, but team review is still needed to confirm that the content is complete and consistent.
-
----
-
-## AI-Use Declaration
-
-Project 2 requires the team to document any use of AI tools.
-
-The final declaration should accurately describe which tools were used, how they assisted with the work, and how the team reviewed or verified the results.
-
-Any AI-assisted writing, coding, diagram creation, or documentation work should be disclosed as applicable.
-
-The team must complete and confirm this declaration before final submission.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for additional workflow instructions.
 
 ---
 
-## Project 2 Submission
+## 13. AI-Use Declaration
 
-**Milestone:** Analysis and High-Level Design  
-**Due Date:** November 8, 2026, at 11:59 PM CT  
-**Submission Type:** One team PDF containing the GitHub repository URL
+Our team used **ChatGPT (OpenAI)** and **Claude (Anthropic)** as AI-assisted tools during work on TaskTrack.
 
-**Repository:**
+These tools were used to assist with project documentation, writing and revision, explaining software engineering concepts, and reviewing project materials. AI assistance also supported parts of the design and development process.
+
+AI-generated suggestions were treated as supporting material rather than automatically accepted as final work. Team members were responsible for reviewing the content, making necessary corrections, and checking that it matched the project requirements and our intended design.
+
+We used our Project 1 requirements, use cases, professor feedback, and Project 2 grading rubric to guide the final deliverables.
+
+We acknowledge the use of ChatGPT and Claude and the importance of checking AI-assisted work for accuracy and consistency.
+
+---
+
+## 14. Project 2 Submission
+
+**Project:** TaskTrack — Student Assignment Management System  
+**Course:** CS 3354 — Software Engineering  
+**Milestone:** Project 2 — Analysis and High-Level Design  
+**Due Date:** November 8, 2026, at 11:59 PM CT
+
+**Submission Requirement:** One team PDF containing the repository URL.
+
+**GitHub Repository:**
 
 https://github.com/ahneematallah-boop/TaskTrack-CS3354
 
-The repository contains the documentation, diagrams, design decisions, and development work for TaskTrack.
-
-The final submission should reference the Project 2 deliverables, prototype evidence, and individual contributions.
+The repository contains the Project 1 and Project 2 documentation, design diagrams, implementation files, prototype, and available individual contribution evidence.
 
 ---
 
 ## Conclusion
 
-TaskTrack is designed to provide a simple and organized way for college students to manage their assignments and deadlines.
+TaskTrack is intended to provide students with a simple way to manage their courses, assignments, and deadlines.
 
-Project 1 established the requirements and use cases. Project 2 builds on that foundation by defining the architecture, system interactions, design decisions, data models, and requirements traceability.
+Project 1 established the problem, requirements, and use cases. Project 2 builds on that foundation through system architecture, high-level design, sequence diagrams, requirements traceability, design rationale, and prototype development.
 
-The team will continue using these documents as a reference for implementation, testing, and future improvements.
+The team will continue using these documents to guide implementation, testing, and future improvements.
