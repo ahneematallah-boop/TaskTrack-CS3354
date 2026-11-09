@@ -1,0 +1,40 @@
+Person 6 — Contribution Evidence
+
+Contributor: Taha Khwaja
+Responsibility: P2 prototype and integration.
+
+Work branch	taha/p6-prototype
+
+Build the prototype that shows how a student uses TaskTrack, and connect it to the local backend through the API contract. The frontend integration guide defines the screens and the integration rules.
+
+Delivered work
+File	What it does
+index.html	Dashboard, assignments, and courses views, plus the assignment and delete-confirmation dialogs
+style.css	Responsive layout with light and dark themes and visible keyboard focus
+app.js	API calls, rendering, forms, filters, status changes, and refresh logic
+dev_server.py	Local server that serves the frontend and proxies /api to the backend
+Frontend README	Run steps, screen-to-use-case table, integration behavior, and testing status
+Screenshots	Evidence of each screen running against the real backend
+Use-case and requirement coverage
+Screen	Use cases	Requirements
+Dashboard	UC-08, UC-06	FR-6.1, FR-6.3, FR-6.4
+Assignment list	UC-06, UC-07, UC-09	FR-3.1, FR-3.2, FR-3.3, FR-4.3
+Assignment form	UC-03, UC-04	FR-2.1, FR-2.2, FR-2.3, FR-2.4, FR-5.1
+Delete confirmation	UC-05	FR-2.5, FR-2.6
+Course management	UC-01, UC-02	FR-5.3, FR-5.4
+Filters	UC-09	FR-5.2
+Saved work after restart	UC-10	FR-2.7
+Integration rules implemented
+Student text is rendered with textContent (NFR-12).
+Forms keep their input after a failed save and show error.fields beside each field.
+Save is disabled while a write is pending.
+Delete asks for confirmation before sending confirmed=true.
+Each successful change reloads the list and dashboard and keeps the current filters.
+The app refreshes on page focus and once per minute, and a failed refresh keeps the saved data on screen.
+Verification
+Walked through every screen in a browser against the running backend, including validation errors, delete confirmation, filters, and a backend restart.
+Ran python -m unittest discover -s tests -v, python scripts/check_traceability.py, and markdownlint on the changed documents.
+Not completed
+Cross-browser and phone-size testing (NFR-9, NFR-10).
+Automated browser tests.
+Account registration and login (FR-1.1, FR-1.2), which are deferred under the single-user scope in architecture.
