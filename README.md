@@ -72,7 +72,7 @@ We are using this feedback to guide Project 2 and the remaining development work
 | Matthew Oksanen | Use cases and traceability |
 | Jacqueline Rodriguez | Team planning, milestones, and risks |
 | Ittehadul Karim | Repository organization and final review |
-| Vinh Tang | Joined the team for Project 2; no P1 contribution recorded |
+| Vinh Tang | Models, sequence diagram |
 
 ---
 
