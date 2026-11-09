@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TaskTrack</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>TaskTrack</h1>
+  <nav aria-label="Main">
+    <button data-view="dashboard" aria-current="page">Dashboard</button>
+    <button data-view="assignments">Assignments</button>
+    <button data-view="courses">Courses</button>
+  </nav>
+</header>
+<div id="banner" role="alert" hidden></div>
+<main>
+  <section id="view-dashboard">
+    <div class="counts" id="counts"></div>
+    <h2>Next due</h2>
+    <ul class="list" id="next-due"></ul>
+  </section>
+
+  <section id="view-assignments" hidden>
+    <div class="toolbar">
+      <label>Course <select id="f-course"><option value="">All courses</option></select></label>
+      <label>Status <select id="f-status">
+        <option value="">All</option><option>Pending</option><option>Completed</option><option>Overdue</option>
+      </select></label>
+      <button class="primary" id="add-assignment">Add assignment</button>
+    </div>
+    <ul class="list" id="assignment-list"></ul>
+  </section>
+
+  <section id="view-courses" hidden>
+    <form id="course-form" novalidate>
+      <input type="hidden" name="id">
+      <label>Course name <input name="name" maxlength="120" autocomplete="off"></label>
+      <label>Code <input name="code" maxlength="30" autocomplete="off"></label>
+      <button class="primary" type="submit">Save course</button>
+      <button type="button" id="course-cancel" hidden>Cancel</button>
+      <p class="err" data-err="name"></p><p class="err" data-err="code"></p><p class="err" data-err="_"></p>
+    </form>
+    <ul class="list" id="course-list"></ul>
+  </section>
+</main>
+
+<dialog id="assignment-dialog">
+  <form id="assignment-form" novalidate>
+    <h2 id="assignment-title-h">Add assignment</h2>
+    <input type="hidden" name="id">
+    <label>Title <input name="title" maxlength="200" autocomplete="off"></label><p class="err" data-err="title"></p>
+    <label>Course <select name="course_id"></select></label><p class="err" data-err="course_id"></p>
+    <label>Due date <input name="due_date" type="date"></label><p class="err" data-err="due_date"></p>
+    <label>Due time (optional) <input name="due_time" type="time"></label><p class="err" data-err="due_time"></p>
+    <label>Type <select name="task_type"><option>Assignment</option><option>Quiz</option><option>Exam</option></select></label>
+    <label>Description <textarea name="description" rows="3" maxlength="5000"></textarea></label><p class="err" data-err="description"></p>
+    <p class="err" data-err="_"></p>
+    <div class="actions">
+      <button type="button" id="assignment-cancel">Cancel</button>
+      <button class="primary" type="submit">Save assignment</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="confirm-dialog">
+  <form method="dialog">
+    <p id="confirm-text"></p>
+    <div class="actions">
+      <button value="cancel">Cancel</button>
+      <button class="danger" value="ok">Delete</button>
+    </div>
+  </form>
+</dialog>
+<script src="app.js"></script>
+</body>
+</html>
