@@ -7,5 +7,5 @@
     "MD036": false,  // bold-as-heading allowed in use case templates
     "MD060": false   // table column alignment style
   },
-  "ignores": [".github/pull_request_template.md"]
+  "ignores": [".github/pull_request_template.md", ".venv/**"]
 }
