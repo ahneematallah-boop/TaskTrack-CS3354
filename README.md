@@ -13,11 +13,11 @@ TaskTrack is a web application that keeps a college student's assignments in one
 | Phase | State |
 |---|---|
 | Problem, scope, requirements, use cases, team plan | In repository |
-| Design (architecture, data model, UI) | Not started |
-| Implementation | Not started |
-| Testing | Not started |
+| Design (architecture, data model, UI) | P2 use cases, rationale, and architecture available; shared model/UI integration in progress |
+| Implementation | Local course/assignment API and SQLite persistence available on this branch |
+| Testing | Backend integration suite and CI available; integrated browser checks pending |
 
-This repository holds documentation only. Application code is added in a later phase.
+The local backend supports the P2 design with a runnable API. See [Architecture](docs/architecture.md) for setup and [API Contract](docs/api.md) for integration. Frontend prototype screens remain a separate contribution.
 
 ## Documentation map
 
@@ -31,22 +31,27 @@ Read the documents in this order. Each one builds on the one before it.
 | 4 | [Team Plan](docs/team-plan.md) | Roles, working agreement, milestones, risks | Jackie |
 | 5 | [Contributing](CONTRIBUTING.md) | Branch and pull request workflow, review checks | Karim |
 
+## Person 2 — Architecture and backend
+
+- [Architecture, component diagram, and deployment](docs/architecture.md)
+- [API contract and smoke workflow](docs/api.md)
+- [Frontend integration boundary](frontend/README.md)
+- [Backend integration tests](tests/test_backend.py)
+
 ## Repository design
 
 ```text
 TaskTrack-CS3354/
 ├── README.md                      Project overview and documentation map
 ├── CONTRIBUTING.md                Branch → pull request → review → merge workflow
-├── docs/                          Every specification document, one file per section
-│   ├── problem-and-scope.md
-│   ├── Requirements.md
-│   ├── Use_Case.md
-│   └── team-plan.md
-├── scripts/
-│   └── check_traceability.py      Verifies every cited FR/NFR ID exists in Requirements.md
-├── .github/
-│   ├── workflows/docs-review.yml  CI: markdown lint, link check, traceability
-│   └── pull_request_template.md   Author and reviewer checklists
+├── docs/                          Requirements, use cases, rationale, architecture, API
+├── diagrams/                      Architecture PNG and editable SVG
+├── frontend/                      Integration guide; screens owned by prototype contributor
+├── backend/                       Flask routes, application services, SQLite connections
+├── data/schema.sql                Persistent local schema and logical owner
+├── tests/test_backend.py          API integration tests using temporary databases
+├── scripts/check_traceability.py  Verify cited FR/NFR IDs
+├── .github/workflows/             Documentation and backend checks
 └── .markdownlint-cli2.jsonc       Lint rules
 ```
 
