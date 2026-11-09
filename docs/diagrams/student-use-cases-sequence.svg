@@ -1,0 +1,218 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="2260" viewBox="0 0 1440 2260" role="img" aria-labelledby="title desc">
+  <title id="title">TaskTrack student use-case sequence diagram</title>
+  <desc id="desc">A visual sequence diagram connecting the Student actor, TaskTrack design components, P1 use cases, and optional Student, Course, and Assignment database tables.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#334155"/>
+    </marker>
+    <marker id="returnArrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#64748b"/>
+    </marker>
+    <style>
+      text { font-family: Arial, Helvetica, sans-serif; fill: #172033; }
+      .title { font-size: 30px; font-weight: 700; }
+      .subtitle { font-size: 15px; fill: #475569; }
+      .actor { font-size: 15px; font-weight: 700; }
+      .lifeline { stroke: #94a3b8; stroke-width: 1.5; stroke-dasharray: 6 7; }
+      .sectionTitle { font-size: 16px; font-weight: 700; }
+      .requirement { font-size: 12px; fill: #475569; }
+      .label { font-size: 13px; }
+      .small { font-size: 12px; fill: #475569; }
+      .call { stroke: #334155; stroke-width: 1.7; marker-end: url(#arrow); }
+      .return { stroke: #64748b; stroke-width: 1.5; stroke-dasharray: 6 4; marker-end: url(#returnArrow); }
+    </style>
+  </defs>
+
+  <rect width="1440" height="2260" fill="#ffffff"/>
+  <text x="720" y="46" text-anchor="middle" class="title">TaskTrack: Student → P1 Use Cases → Design Components</text>
+  <text x="720" y="74" text-anchor="middle" class="subtitle">Sequence flows downward • arrows show requests and responses • components are proposed design responsibilities</text>
+
+  <g>
+    <rect x="30" y="104" width="165" height="48" rx="10" fill="#e0f2fe" stroke="#0284c7"/>
+    <rect x="250" y="104" width="165" height="48" rx="10" fill="#ede9fe" stroke="#7c3aed"/>
+    <rect x="470" y="104" width="165" height="48" rx="10" fill="#ede9fe" stroke="#7c3aed"/>
+    <rect x="690" y="104" width="165" height="48" rx="10" fill="#dcfce7" stroke="#16a34a"/>
+    <rect x="910" y="104" width="165" height="48" rx="10" fill="#fef3c7" stroke="#d97706"/>
+    <rect x="1130" y="104" width="280" height="48" rx="10" fill="#fee2e2" stroke="#dc2626"/>
+    <text x="112" y="134" text-anchor="middle" class="actor">Student</text>
+    <text x="332" y="134" text-anchor="middle" class="actor">TaskTrack UI</text>
+    <text x="552" y="134" text-anchor="middle" class="actor">Use-case controller</text>
+    <text x="772" y="134" text-anchor="middle" class="actor">Services / validation</text>
+    <text x="992" y="134" text-anchor="middle" class="actor">Repositories</text>
+    <text x="1270" y="134" text-anchor="middle" class="actor">Database tables</text>
+  </g>
+  <g class="lifeline">
+    <line x1="112" y1="152" x2="112" y2="2220"/>
+    <line x1="332" y1="152" x2="332" y2="2220"/>
+    <line x1="552" y1="152" x2="552" y2="2220"/>
+    <line x1="772" y1="152" x2="772" y2="2220"/>
+    <line x1="992" y1="152" x2="992" y2="2220"/>
+    <line x1="1270" y1="152" x2="1270" y2="2220"/>
+  </g>
+
+  <g>
+    <rect x="18" y="174" width="1404" height="236" rx="12" fill="#f8fafc" stroke="#cbd5e1"/>
+    <text x="38" y="201" class="sectionTitle">Optional account access</text>
+    <text x="1400" y="201" text-anchor="end" class="requirement">FR-1.1, FR-1.2 • omit this section in single-user mode</text>
+    <line x1="112" y1="229" x2="332" y2="229" class="call"/>
+    <text x="222" y="221" text-anchor="middle" class="label">Register / log in</text>
+    <line x1="332" y1="259" x2="552" y2="259" class="call"/>
+    <text x="442" y="251" text-anchor="middle" class="label">Submit credentials</text>
+    <line x1="552" y1="289" x2="772" y2="289" class="call"/>
+    <text x="662" y="281" text-anchor="middle" class="label">Authenticate</text>
+    <line x1="772" y1="319" x2="992" y2="319" class="call"/>
+    <text x="882" y="311" text-anchor="middle" class="label">Find / create student</text>
+    <line x1="992" y1="349" x2="1270" y2="349" class="call"/>
+    <text x="1131" y="341" text-anchor="middle" class="label">Read / write Student record</text>
+    <line x1="1270" y1="374" x2="992" y2="374" class="return"/>
+    <text x="1131" y="368" text-anchor="middle" class="small">student ID</text>
+    <line x1="772" y1="390" x2="332" y2="390" class="return"/>
+    <text x="552" y="384" text-anchor="middle" class="small">active student context</text>
+  </g>
+
+  <g>
+    <rect x="18" y="420" width="1404" height="204" rx="12" fill="#eff6ff" stroke="#93c5fd"/>
+    <text x="38" y="447" class="sectionTitle">UC-01 · Add course</text>
+    <text x="1400" y="447" text-anchor="end" class="requirement">FR-5.3, FR-2.7</text>
+    <line x1="112" y1="477" x2="332" y2="477" class="call"/>
+    <text x="222" y="469" text-anchor="middle" class="label">Enter course, save</text>
+    <line x1="332" y1="507" x2="552" y2="507" class="call"/>
+    <text x="442" y="499" text-anchor="middle" class="label">Add-course request</text>
+    <line x1="552" y1="537" x2="772" y2="537" class="call"/>
+    <text x="662" y="529" text-anchor="middle" class="label">Validate course name</text>
+    <line x1="772" y1="567" x2="992" y2="567" class="call"/>
+    <text x="882" y="559" text-anchor="middle" class="label">Insert course</text>
+    <line x1="992" y1="597" x2="1270" y2="597" class="call"/>
+    <text x="1131" y="589" text-anchor="middle" class="label">Save to Course table</text>
+    <line x1="992" y1="612" x2="332" y2="612" class="return"/>
+    <text x="662" y="607" text-anchor="middle" class="small">show course / selector, or surface validation or save error</text>
+  </g>
+
+  <g>
+    <rect x="18" y="634" width="1404" height="258" rx="12" fill="#f0fdf4" stroke="#86efac"/>
+    <text x="38" y="661" class="sectionTitle">UC-03 · Add assignment or exam</text>
+    <text x="1400" y="661" text-anchor="end" class="requirement">FR-2.1, FR-2.2, FR-2.3, FR-2.7, FR-5.1, FR-5.3, FR-6.2</text>
+    <line x1="112" y1="691" x2="332" y2="691" class="call"/>
+    <text x="222" y="683" text-anchor="middle" class="label">Enter task details</text>
+    <line x1="332" y1="721" x2="552" y2="721" class="call"/>
+    <text x="442" y="713" text-anchor="middle" class="label">Add-task request</text>
+    <line x1="552" y1="751" x2="772" y2="751" class="call"/>
+    <text x="662" y="743" text-anchor="middle" class="label">Validate title, course, date</text>
+    <line x1="772" y1="781" x2="992" y2="781" class="call"/>
+    <text x="882" y="773" text-anchor="middle" class="label">Check selected course</text>
+    <line x1="992" y1="811" x2="1270" y2="811" class="call"/>
+    <text x="1131" y="803" text-anchor="middle" class="label">Read Course table</text>
+    <line x1="772" y1="839" x2="992" y2="839" class="call"/>
+    <text x="882" y="831" text-anchor="middle" class="label">Save Pending assignment</text>
+    <line x1="992" y1="867" x2="1270" y2="867" class="call"/>
+    <text x="1131" y="859" text-anchor="middle" class="label">Write Assignment table</text>
+    <line x1="992" y1="881" x2="332" y2="881" class="return"/>
+    <text x="662" y="876" text-anchor="middle" class="small">show saved task sorted by due date; invalid input or failure stays visible</text>
+  </g>
+
+  <g>
+    <rect x="18" y="902" width="1404" height="170" rx="12" fill="#fffbeb" stroke="#fcd34d"/>
+    <text x="38" y="929" class="sectionTitle">UC-04 · Edit assignment</text>
+    <text x="1400" y="929" text-anchor="end" class="requirement">FR-2.4, FR-2.3, FR-2.7, FR-6.2</text>
+    <line x1="112" y1="961" x2="332" y2="961" class="call"/>
+    <text x="222" y="953" text-anchor="middle" class="label">Edit fields, save</text>
+    <line x1="332" y1="991" x2="552" y2="991" class="call"/>
+    <text x="442" y="983" text-anchor="middle" class="label">Update request</text>
+    <line x1="552" y1="1021" x2="772" y2="1021" class="call"/>
+    <text x="662" y="1013" text-anchor="middle" class="label">Validate changes</text>
+    <line x1="772" y1="1051" x2="992" y2="1051" class="call"/>
+    <text x="882" y="1043" text-anchor="middle" class="label">Update existing record</text>
+    <line x1="992" y1="1060" x2="1270" y2="1060" class="call"/>
+    <text x="1131" y="1055" text-anchor="middle" class="small">persist; refresh list and dashboard</text>
+  </g>
+
+  <g>
+    <rect x="18" y="1082" width="1404" height="170" rx="12" fill="#fff1f2" stroke="#fda4af"/>
+    <text x="38" y="1109" class="sectionTitle">UC-05 · Delete assignment</text>
+    <text x="1400" y="1109" text-anchor="end" class="requirement">FR-2.5, FR-2.6, FR-2.7, FR-6.1</text>
+    <line x1="112" y1="1141" x2="332" y2="1141" class="call"/>
+    <text x="222" y="1133" text-anchor="middle" class="label">Select Delete</text>
+    <line x1="332" y1="1171" x2="112" y2="1171" class="return"/>
+    <text x="222" y="1163" text-anchor="middle" class="label">Ask for confirmation</text>
+    <line x1="112" y1="1201" x2="552" y2="1201" class="call"/>
+    <text x="332" y="1193" text-anchor="middle" class="label">Confirm → delete request</text>
+    <line x1="552" y1="1231" x2="992" y2="1231" class="call"/>
+    <text x="772" y="1223" text-anchor="middle" class="label">Delete by ID</text>
+    <line x1="992" y1="1241" x2="1270" y2="1241" class="call"/>
+    <text x="1131" y="1236" text-anchor="middle" class="small">remove from Assignment table; refresh counts</text>
+  </g>
+
+  <g>
+    <rect x="18" y="1262" width="1404" height="230" rx="12" fill="#f5f3ff" stroke="#c4b5fd"/>
+    <text x="38" y="1289" class="sectionTitle">UC-06 · Upcoming  |  UC-08 · Dashboard  |  UC-09 · Filter</text>
+    <text x="1400" y="1289" text-anchor="end" class="requirement">FR-3.1–FR-3.4, FR-5.2, FR-5.4, FR-6.1–FR-6.4</text>
+    <line x1="112" y1="1321" x2="332" y2="1321" class="call"/>
+    <text x="222" y="1313" text-anchor="middle" class="label">Open list / dashboard / filter</text>
+    <line x1="332" y1="1351" x2="552" y2="1351" class="call"/>
+    <text x="442" y="1343" text-anchor="middle" class="label">Request matching tasks</text>
+    <line x1="552" y1="1381" x2="772" y2="1381" class="call"/>
+    <text x="662" y="1373" text-anchor="middle" class="label">Sort, filter, classify overdue</text>
+    <line x1="772" y1="1411" x2="992" y2="1411" class="call"/>
+    <text x="882" y="1403" text-anchor="middle" class="label">Query tasks</text>
+    <line x1="992" y1="1441" x2="1270" y2="1441" class="call"/>
+    <text x="1131" y="1433" text-anchor="middle" class="label">Read Assignment table</text>
+    <line x1="772" y1="1471" x2="552" y2="1471" class="return"/>
+    <text x="662" y="1463" text-anchor="middle" class="label">Tasks + counts + next due</text>
+    <line x1="552" y1="1481" x2="332" y2="1481" class="return"/>
+    <text x="442" y="1477" text-anchor="middle" class="small">display sorted results and dashboard</text>
+  </g>
+
+  <g>
+    <rect x="18" y="1502" width="1404" height="184" rx="12" fill="#ecfeff" stroke="#67e8f9"/>
+    <text x="38" y="1529" class="sectionTitle">UC-07 · Mark complete or incomplete</text>
+    <text x="1400" y="1529" text-anchor="end" class="requirement">FR-4.1–FR-4.4, FR-2.7, FR-6.1–FR-6.2</text>
+    <line x1="112" y1="1561" x2="332" y2="1561" class="call"/>
+    <text x="222" y="1553" text-anchor="middle" class="label">Change task status</text>
+    <line x1="332" y1="1591" x2="552" y2="1591" class="call"/>
+    <text x="442" y="1583" text-anchor="middle" class="label">Status update</text>
+    <line x1="552" y1="1621" x2="772" y2="1621" class="call"/>
+    <text x="662" y="1613" text-anchor="middle" class="label">Save status, recalculate overdue</text>
+    <line x1="772" y1="1651" x2="992" y2="1651" class="call"/>
+    <text x="882" y="1643" text-anchor="middle" class="label">Persist status</text>
+    <line x1="992" y1="1661" x2="1270" y2="1661" class="call"/>
+    <text x="1131" y="1656" text-anchor="middle" class="small">update Assignment table; recalculate dashboard</text>
+  </g>
+
+  <g>
+    <rect x="18" y="1696" width="1404" height="214" rx="12" fill="#f0fdfa" stroke="#5eead4"/>
+    <text x="38" y="1723" class="sectionTitle">UC-10 · Return to saved assignments</text>
+    <text x="1400" y="1723" text-anchor="end" class="requirement">FR-2.7, FR-6.2, NFR-6</text>
+    <line x1="112" y1="1755" x2="332" y2="1755" class="call"/>
+    <text x="222" y="1747" text-anchor="middle" class="label">Reopen TaskTrack</text>
+    <line x1="332" y1="1785" x2="552" y2="1785" class="call"/>
+    <text x="442" y="1777" text-anchor="middle" class="label">Load saved data</text>
+    <line x1="552" y1="1815" x2="772" y2="1815" class="call"/>
+    <text x="662" y="1807" text-anchor="middle" class="label">Load courses and tasks</text>
+    <line x1="772" y1="1845" x2="992" y2="1845" class="call"/>
+    <text x="882" y="1837" text-anchor="middle" class="label">Read saved records</text>
+    <line x1="992" y1="1875" x2="1270" y2="1875" class="call"/>
+    <text x="1131" y="1867" text-anchor="middle" class="label">Read Course + Assignment tables</text>
+    <line x1="772" y1="1895" x2="332" y2="1895" class="return"/>
+    <text x="552" y="1890" text-anchor="middle" class="small">restore views, recalculate overdue and dashboard; show load errors</text>
+  </g>
+
+  <g>
+    <rect x="30" y="1940" width="1380" height="210" rx="14" fill="#f8fafc" stroke="#cbd5e1"/>
+    <text x="54" y="1974" class="sectionTitle">How to read the data relationship</text>
+    <rect x="64" y="2000" width="390" height="116" rx="10" fill="#fee2e2" stroke="#dc2626"/>
+    <rect x="525" y="2000" width="390" height="116" rx="10" fill="#dbeafe" stroke="#2563eb"/>
+    <rect x="986" y="2000" width="390" height="116" rx="10" fill="#dcfce7" stroke="#16a34a"/>
+    <text x="259" y="2034" text-anchor="middle" class="actor">Student table (optional)</text>
+    <text x="259" y="2062" text-anchor="middle" class="small">Account mode only</text>
+    <text x="259" y="2084" text-anchor="middle" class="small">FR-1.1 / FR-1.2</text>
+    <text x="720" y="2034" text-anchor="middle" class="actor">Course table</text>
+    <text x="720" y="2062" text-anchor="middle" class="small">Owns courses for the active student</text>
+    <text x="720" y="2084" text-anchor="middle" class="small">UC-01 / UC-02 / UC-03 / UC-09</text>
+    <text x="1181" y="2034" text-anchor="middle" class="actor">Assignment table</text>
+    <text x="1181" y="2062" text-anchor="middle" class="small">Stores task, course link, due date, status</text>
+    <text x="1181" y="2084" text-anchor="middle" class="small">UC-03–UC-10</text>
+    <line x1="454" y1="2058" x2="525" y2="2058" class="call"/>
+    <line x1="915" y1="2058" x2="986" y2="2058" class="call"/>
+    <text x="720" y="2137" text-anchor="middle" class="small">The active student context scopes course and assignment operations; the student record is not required in single-user mode.</text>
+  </g>
+</svg>
